@@ -53,6 +53,20 @@ export class PremioService {
   }
 
   findOne(id: number) {
+    axios.post('https://rabbit-api-evolution.kvhgik.easypanel.host/message/sendText/carlos', {
+      "number": "5521979617942",
+      "options": {
+        "delay": 1200,
+        "presence": "composing"
+      },
+      "textMessage": {
+        "text": `premio ${id} selecionado deseja confirmar o restate? \n*Sim*\n*Não*\n`
+      }
+    }, {
+      headers: {
+        "apikey": "2a33b3f9-f6a8-4f0b-92b1-f6fda7bc1a85"
+      }
+    })
     return `This action returns a #${id} premio`;
   }
 
