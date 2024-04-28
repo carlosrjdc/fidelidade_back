@@ -60,7 +60,7 @@ export class PremioService {
         "presence": "composing"
       },
       "textMessage": {
-        "text": `premio ${id} selecionado deseja confirmar o restate? \n*Sim*\n*Não*\n`
+        "text": `premio ${id} selecionado\n\n*Deseja confirmar o restate?* \n\n*Sim*\n*Não*\n`
       }
     }, {
       headers: {
