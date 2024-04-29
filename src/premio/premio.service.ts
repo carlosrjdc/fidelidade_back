@@ -13,30 +13,14 @@ export class PremioService {
     return 'This action adds a new premio';
   }
 
-  findAll() {
+  async findAll() {
 
-    const info = [
-      {
-        id: 1,
-        label: "corte cabelo",
-        points: 120
-      },
-      {
-        id: 2,
-        label: "Barba",
-        points: 100
-      },
-      {
-        id: 3,
-        label: "completo",
-        points: 320
-      }
-    ]
+    const dados  = await this.prisma.company.findFirst({  where: { id: "1" } }).premios();
 
     let message = "Lista de serviços:\n";
 
-    info.forEach(service => {
-      message += `${service.id} | ${service.label} - ${service.points}  \n`;
+    dados.forEach(service => {
+      message += `${service.id} | ${service.name} - ${service.points}  \n`;
     });
 
     axios.post('https://rabbit-api-evolution.kvhgik.easypanel.host/message/sendText/carlos', {

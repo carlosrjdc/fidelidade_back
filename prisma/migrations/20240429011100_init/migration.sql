@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Premios" ADD COLUMN     "points" INTEGER NOT NULL DEFAULT 20;
