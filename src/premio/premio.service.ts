@@ -2,9 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { CreatePremioDto } from './dto/create-premio.dto';
 import { UpdatePremioDto } from './dto/update-premio.dto';
 import axios from 'axios';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
 export class PremioService {
+
+  constructor(private readonly prisma:PrismaService) {}
+
   create(createPremioDto: CreatePremioDto) {
     return 'This action adds a new premio';
   }
